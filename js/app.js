@@ -23,18 +23,13 @@
  * 
 */
 // declare the document Fragment
-
 let theFragment = document.createDocumentFragment();
 // select the sections
 let sections = document.getElementsByTagName('section');
 // make parent element
 let parentList = document.querySelector('ul');
 
-
-
-
-
-
+let navLinks = document.getElementById("navbar__list");
 /**
  * End Global Variables
  * Start Helper Functions
@@ -52,7 +47,7 @@ let parentList = document.querySelector('ul');
 
 // build the nav
 function navbarFormation(){
-    for (const section of sections) {
+    for (let section of sections) {
         //create list element
         let leList = document.createElement('li');
         // create anchor element
@@ -67,34 +62,24 @@ function navbarFormation(){
         leList.appendChild(theLink);
         // add the whole list to document Fragment
         theFragment.appendChild(leList);
+        //make the scroll
+        theLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            section.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            })
+        })
 }
 // add list to the parent list
     parentList.appendChild(theFragment);
 }
+// call the function
+window.addEventListener("load",navbarFormation());
+// make the varible
 
 
-// scroll function
-
-function scrollToIt() {
-    // preventing default
-    EventSource.preventDefault();
-    // form a loop
-
-    // finding corresponding section
-    const sectionSelected = "";
-    if (sectionSelected.scrollTo() !== undefined) {
-        sectionSelected.scrollTo({
-            top: 100,
-            left: 0,
-            behavior: "smooth"
-        })
-    }    
-    
-}
-
-
-
-
+// make the scroll
 
 /**
  * End Main Functions
@@ -108,8 +93,3 @@ function scrollToIt() {
 
 // Set sections as active
 
-
-
-// call the functions
-window.addEventListener("load",navbarFormation());
-window.addEventListener('click',scrollToIt());
