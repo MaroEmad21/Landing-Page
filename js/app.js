@@ -24,11 +24,11 @@
 */
 // declare the document Fragment
 
-var theGlobal = document.createDocumentFragment();
+let theGlobal = document.createDocumentFragment();
 // select the sections
 let sections = document.getElementsByTagName('section');
 // make parent element
-let parentList = document.getElementsByTagName('ul');
+let parentList = document.querySelector('ul');
 
 /**
  * End Global Variables
@@ -50,18 +50,15 @@ for (const section of sections) {
     let leList = document.createElement('li');
     // create anchor element
     let theLink = document.createElement('a');
- 
-    
+        // add text name 
+    theLink.textContent = section.dataset.nav;   
     //add class to the link item
     theLink.classList.add("menu__link");
-
     leList.appendChild(theLink);
-    theGlobal.append(leList);
-       // add text name 
-    theLink.textContent = section.dataset.nav;   
+    theGlobal.appendChild(leList);
 }
-parentList.appendChild(theGlobal);
 
+parentList.appendChild(theGlobal)
 
 
 
