@@ -24,7 +24,7 @@
 */
 // declare the document Fragment
 
-let theGlobal = document.createDocumentFragment();
+let theFragment = document.createDocumentFragment();
 // select the sections
 let sections = document.getElementsByTagName('section');
 // make parent element
@@ -60,10 +60,10 @@ for (const section of sections) {
     // add link to the list 
     leList.appendChild(theLink);
     // add the whole list to document Fragment
-    theGlobal.appendChild(leList);
+    theFragment.appendChild(leList);
 }
 // add list to the parent list
-parentList.appendChild(theGlobal)
+parentList.appendChild(theFragment);
 }
 
 
