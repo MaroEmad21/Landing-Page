@@ -73,6 +73,7 @@ parentList.appendChild(theGlobal)
 
 
 // Scroll to anchor ID using scrollTO event
+function scrollingToDesire() {
 window.addEventListener('click', (evt) => {
     // prevent the default
     evt.preventDefault();
@@ -84,6 +85,8 @@ window.addEventListener('click', (evt) => {
         behavior: "smooth"
     })
 })
+
+}
 /**
  * End Main Functions
  * Begin Events
@@ -100,3 +103,4 @@ window.addEventListener('click', (evt) => {
 
 // call the functions
 navbarFormation();
+scrollingToDesire();
