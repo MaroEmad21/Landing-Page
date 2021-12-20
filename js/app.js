@@ -31,15 +31,6 @@ let parentList = document.querySelector('ul');
 
 /**
  * End Global Variables
- * Start Helper Functions
- * 
-*/
-
-//function getTop() {
-//}
-
-/**
- * End Helper Functions
  * Begin Main Functions
  * 
 */
@@ -75,14 +66,3 @@ function navbarFormation(){
 }
 // call the function
 window.addEventListener("load",navbarFormation());
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
-
-
-// Set sections as active
-
