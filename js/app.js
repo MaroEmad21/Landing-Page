@@ -29,14 +29,15 @@ let theGlobal = document.createDocumentFragment();
 let sections = document.getElementsByTagName('section');
 // make parent element
 let parentList = document.querySelector('ul');
-
+let Links = document.getElementsByTagName('a');
 /**
  * End Global Variables
  * Start Helper Functions
  * 
 */
 
-
+//function getTop() {
+//}
 
 /**
  * End Helper Functions
@@ -72,8 +73,17 @@ parentList.appendChild(theGlobal)
 
 
 // Scroll to anchor ID using scrollTO event
-
-
+window.addEventListener('click', (evt) => {
+    // prevent the default
+    evt.preventDefault();
+    // declare the selected setion
+    
+    window.scrollTo({
+        top: 100,
+        left: 0,
+        behavior: "smooth"
+    })
+})
 /**
  * End Main Functions
  * Begin Events
