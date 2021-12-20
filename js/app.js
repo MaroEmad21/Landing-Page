@@ -50,8 +50,10 @@ for (const section of sections) {
     leList.append(section.dataset.nav);
     theLink.classList.add("menu__link");
     leList.appendChild(theLink);
-    parentList.appendChild(leList);
+    theGlobal.appendChild(leList);
 }
+parentList.appendChild(leList);
+
 
 
 
