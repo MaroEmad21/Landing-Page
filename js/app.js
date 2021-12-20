@@ -24,9 +24,10 @@
 */
 // declare the document Fragment
 
-let theGlobal = document.createDocumentFragment();
+var theGlobal = document.createDocumentFragment();
 // select the sections
 let sections = document.getElementsByTagName('section');
+// make parent element
 let parentList = document.getElementsByTagName('ul');
 
 /**
@@ -55,11 +56,11 @@ for (const section of sections) {
     theLink.classList.add("menu__link");
 
     leList.appendChild(theLink);
-    theGlobal.appendChild(leList);
+    theGlobal.append(leList);
        // add text name 
     theLink.textContent = section.dataset.nav;   
 }
-parentList.appendChild(leList);
+parentList.appendChild(theGlobal);
 
 
 
