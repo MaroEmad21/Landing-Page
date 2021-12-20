@@ -50,14 +50,16 @@ for (const section of sections) {
     let leList = document.createElement('li');
     // create anchor element
     let theLink = document.createElement('a');
-        // add text name 
+    // add text name 
     theLink.textContent = section.dataset.nav;   
     //add class to the link item
     theLink.classList.add("menu__link");
+    // add link to the list 
     leList.appendChild(theLink);
+    // add the whole list to document Fragment
     theGlobal.appendChild(leList);
 }
-
+// add list to the parent list
 parentList.appendChild(theGlobal)
 
 
