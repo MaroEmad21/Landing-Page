@@ -79,12 +79,12 @@ section {
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
-    color: #000;
+    color: rgb(41, 39, 39);
 }
 
 .navbar__menu .menu__link:hover {
     background: #333;
-    color: #fff;
+    color: rgb(77, 148, 255);
     transition: ease 0.3s all;
 }
 
