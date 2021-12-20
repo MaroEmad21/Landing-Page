@@ -27,7 +27,7 @@
 let theGlobal = document.createDocumentFragment();
 // select the sections
 let sections = document.getElementsByTagName('section');
-let parentList = document.querySelector('ul');
+let parentList = document.getElementsByTagName('ul');
 
 /**
  * End Global Variables
@@ -49,12 +49,15 @@ for (const section of sections) {
     let leList = document.createElement('li');
     // create anchor element
     let theLink = document.createElement('a');
-    // add text name 
-    leList.textContent = section.dataset.nav;
+ 
     
+    //add class to the link item
     theLink.classList.add("menu__link");
+
     leList.appendChild(theLink);
     theGlobal.appendChild(leList);
+       // add text name 
+    theLink.textContent = section.dataset.nav;   
 }
 parentList.appendChild(leList);
 
