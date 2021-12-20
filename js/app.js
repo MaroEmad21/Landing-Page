@@ -45,6 +45,7 @@ let parentList = document.querySelector('ul');
 */
 
 // build the nav
+function navbarFormation(){
 for (const section of sections) {
     //create list element
     let leList = document.createElement('li');
@@ -63,7 +64,7 @@ for (const section of sections) {
 }
 // add list to the parent list
 parentList.appendChild(theGlobal)
-
+}
 
 
 
@@ -84,3 +85,8 @@ parentList.appendChild(theGlobal)
 // Scroll to section on link click
 
 // Set sections as active
+
+
+
+// call the functions
+navbarFormation();
