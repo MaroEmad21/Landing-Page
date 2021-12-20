@@ -29,7 +29,6 @@ let sections = document.getElementsByTagName('section');
 // make parent element
 let parentList = document.querySelector('ul');
 
-let navLinks = document.getElementById("navbar__list");
 /**
  * End Global Variables
  * Start Helper Functions
@@ -62,7 +61,7 @@ function navbarFormation(){
         leList.appendChild(theLink);
         // add the whole list to document Fragment
         theFragment.appendChild(leList);
-        //make the scroll
+        // Scroll to section on link click
         theLink.addEventListener("click", (e) => {
             e.preventDefault();
             section.scrollIntoView({
@@ -76,11 +75,6 @@ function navbarFormation(){
 }
 // call the function
 window.addEventListener("load",navbarFormation());
-// make the varible
-
-
-// make the scroll
-
 /**
  * End Main Functions
  * Begin Events
@@ -89,7 +83,6 @@ window.addEventListener("load",navbarFormation());
 
 // Build menu 
 
-// Scroll to section on link click
 
 // Set sections as active
 
