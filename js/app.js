@@ -45,9 +45,13 @@ let parentList = document.querySelector('ul');
 
 // build the nav
 for (const section of sections) {
+    //create list element
     let leList = document.createElement('li');
+    // create anchor element
     let theLink = document.createElement('a');
-    leList.append(section.dataset.nav);
+    // add text name 
+    leList.textContent = section.dataset.nav;
+    
     theLink.classList.add("menu__link");
     leList.appendChild(theLink);
     theGlobal.appendChild(leList);
