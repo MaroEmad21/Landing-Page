@@ -54,6 +54,8 @@ for (const section of sections) {
     theLink.textContent = section.dataset.nav;   
     //add class to the link item
     theLink.classList.add("menu__link");
+    // add href attr to the anchor element
+    theLink.setAttribute("href","#"+`${section.id}`);
     // add link to the list 
     leList.appendChild(theLink);
     // add the whole list to document Fragment
