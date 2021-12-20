@@ -29,6 +29,12 @@ let theFragment = document.createDocumentFragment();
 let sections = document.getElementsByTagName('section');
 // make parent element
 let parentList = document.querySelector('ul');
+
+
+
+
+
+
 /**
  * End Global Variables
  * Start Helper Functions
@@ -46,32 +52,50 @@ let parentList = document.querySelector('ul');
 
 // build the nav
 function navbarFormation(){
-for (const section of sections) {
-    //create list element
-    let leList = document.createElement('li');
-    // create anchor element
-    let theLink = document.createElement('a');
-    // add text name 
-    theLink.textContent = section.dataset.nav;   
-    //add class to the link item
-    theLink.classList.add("menu__link");
-    // add href attr to the anchor element
-    theLink.setAttribute("href","#"+`${section.id}`);
-    // add link to the list 
-    leList.appendChild(theLink);
-    // add the whole list to document Fragment
-    theFragment.appendChild(leList);
+    for (const section of sections) {
+        //create list element
+        let leList = document.createElement('li');
+        // create anchor element
+        let theLink = document.createElement('a');
+        // add text name 
+        theLink.textContent = section.dataset.nav;   
+        //add class to the link item
+        theLink.classList.add("menu__link");
+        // add href attr to the anchor element
+        theLink.setAttribute("href","#"+`${section.id}`);
+        // add link to the list 
+        leList.appendChild(theLink);
+        // add the whole list to document Fragment
+        theFragment.appendChild(leList);
 }
 // add list to the parent list
-parentList.appendChild(theFragment);
+    parentList.appendChild(theFragment);
+}
+
+
+// scroll function
+
+function scrollToIt() {
+    // preventing default
+    EventSource.preventDefault();
+    // form a loop
+
+    // finding corresponding section
+    const sectionSelected = "";
+    if (sectionSelected.scrollTo() !== undefined) {
+        sectionSelected.scrollTo({
+            top: 100,
+            left: 0,
+            behavior: "smooth"
+        })
+    }    
+    
 }
 
 
 
-// Add class 'active' to section when near top of viewport
 
 
-// Scroll to anchor ID using scrollTO event
 /**
  * End Main Functions
  * Begin Events
@@ -88,3 +112,4 @@ parentList.appendChild(theFragment);
 
 // call the functions
 window.addEventListener("load",navbarFormation());
+window.addEventListener('click',scrollToIt());
