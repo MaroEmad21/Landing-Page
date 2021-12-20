@@ -22,7 +22,11 @@
  * Define Global Variables
  * 
 */
+// declare the document Fragment
 
+let theGlobal = document.createDocumentFragment();
+// select the sections
+let sections = document.getElementsByTagName('section');
 
 /**
  * End Global Variables
@@ -39,6 +43,9 @@
 */
 
 // build the nav
+
+
+
 
 
 // Add class 'active' to section when near top of viewport
