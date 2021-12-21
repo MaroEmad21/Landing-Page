@@ -95,8 +95,6 @@ function navbarFormation(){
 // add list to the parent list
     parentList.appendChild(theFragment);
 }
-// call the function
-window.addEventListener("load",navbarFormation());
 
 
 // active scroll and viewport
@@ -117,6 +115,21 @@ function activeView(){
                 corrLink.classList.add("your-active-class")
                 
             }})})
-        }
+}
+
+// call the function
 
 activeView();
+
+window.addEventListener("load",navbarFormation());
+/*  
+*make scroll up button
+*/
+
+
+window.onscroll = function () {
+    'use strict';
+    if (window.pageYOffset >= 1000) {
+        console.log ('good pro');
+    }
+}

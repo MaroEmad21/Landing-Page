@@ -17,7 +17,13 @@ body {
     font-family: 'Merriweather', serif;
     color: #fff;
 }
-
+/* add the button css*/
+button {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: none;
+}
 
 /* Typeography General*/
 h1 {
