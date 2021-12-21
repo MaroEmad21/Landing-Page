@@ -31,11 +31,30 @@ let parentList = document.querySelector('ul');
 
 /**
  * End Global Variables
- * Begin Main Functions
+ * helper Functions
  * 
+ **/
+// checking if section is active or not
+function checkClass() {
+    // start the loop
+    for (const section of sections){
+        // check if section is active
+        if (section.classList.contains("your-active-class")){
+            //if true remove 
+            section.classList.remove("your-active-class")
+        }
+    }
+
+}
+checkClass();
+ /* Begin Main Functions
+ *
+ * 
+ *  
 */
 
-// build the nav
+
+// build the nav bar
 function navbarFormation(){
     for (let section of sections) {
         //create list element
@@ -47,7 +66,7 @@ function navbarFormation(){
         //add class to the link item
         theLink.classList.add("menu__link");
         // add href attr to the anchor element
-        theLink.setAttribute("href","#"+`${section.id}`);
+        theLink.setAttribute("href",`#${section.id}`);
         // add link to the list 
         leList.appendChild(theLink);
         // add the whole list to document Fragment
@@ -66,3 +85,22 @@ function navbarFormation(){
 }
 // call the function
 window.addEventListener("load",navbarFormation());
+
+
+// active scroll and viewport
+function activeView(){
+    for (let section of sections) {
+        let activeLink =document.querySelector(`[href="#${section.id}"]`);
+        console.log(activeLink);
+        section = document.getElementById(`${section.id}`);
+        if (section.getBoundingClientRect().top >= 0 && section.getBoundingClientRect().top < 300 ) {
+            
+         section.classList.add("your-active-class");
+
+        }
+        
+        
+    }
+}
+
+window.addEventListener('scroll',activeView());
