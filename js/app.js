@@ -88,7 +88,7 @@ function navbarFormation(){
             e.preventDefault();
             section.scrollIntoView({
                 behavior: "smooth",
-                block: "center"
+                block: "start"
             })
         })
 }
