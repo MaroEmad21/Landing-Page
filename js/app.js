@@ -25,7 +25,7 @@
 // declare the document Fragment
 let theFragment = document.createDocumentFragment();
 // select the sections
-let sections = document.getElementsByTagName('section');
+let sections = document.querySelectorAll('section');
 // make parent element
 let parentList = document.querySelector('ul');
 
@@ -38,15 +38,27 @@ let parentList = document.querySelector('ul');
 function checkClass() {
     // start the loop
     for (const section of sections){
+        // declare the variable
+        const activeLink =document.querySelector(`[href="#${section.id}"]`)
         // check if section is active
         if (section.classList.contains("your-active-class")){
             //if true remove 
             section.classList.remove("your-active-class")
         }
+        // check if link is active
+        else if (activeLink.classList.contains("your-active-class")) {
+            // if true remove
+            activeLink.classList.remove("your-active-class")
+        }
+        else {
+            // continue to the next
+            continue;
+        }
     }
 
+
 }
-checkClass();
+
  /* Begin Main Functions
  *
  * 
@@ -89,18 +101,22 @@ window.addEventListener("load",navbarFormation());
 
 // active scroll and viewport
 function activeView(){
-    for (let section of sections) {
-        let activeLink =document.querySelector(`[href="#${section.id}"]`);
-        console.log(activeLink);
-        section = document.getElementById(`${section.id}`);
-        if (section.getBoundingClientRect().top >= 0 && section.getBoundingClientRect().top < 300 ) {
-            
-         section.classList.add("your-active-class");
-
+    // call the window function with scroll event
+    window.addEventListener('scroll',()=> {
+        // make the for each loop to check each section
+        sections.forEach( (section)=>{
+            // declare the corresponding anchor
+            const corrLink =document.querySelector(`[href="#${section.id}"]`)
+            // make the condtion
+            if (section.getBoundingClientRect().top >= 0 && section.getBoundingClientRect().top < 350 ) {
+                // check if it had class
+                checkClass();
+                // add the class to sction
+                section.classList.add("your-active-class")
+                //add the class to the corresponding anchor
+                corrLink.classList.add("your-active-class")
+                
+            }})})
         }
-        
-        
-    }
-}
 
-window.addEventListener('scroll',activeView());
+activeView();
