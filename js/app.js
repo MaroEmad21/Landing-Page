@@ -125,11 +125,29 @@ window.addEventListener("load",navbarFormation());
 /*  
 *make scroll up button
 */
-
-
-window.onscroll = function () {
-    'use strict';
-    if (window.pageYOffset >= 1000) {
-        console.log ('good pro');
+// make the main Function
+function scrollUp(){
+    // declare the variable
+    var myButton = document.getElementById('goup');
+    // start the function on scroling
+    window.onscroll = function () {
+        // make the condition
+        if (window.pageYOffset >= 1300) {
+            // displays the button
+            myButton.style.display = 'block';
+        }
+        else {
+            myButton.style.display = 'none';
+        }
+};
+// function of clicking the button
+    myButton.onclick = function () {
+        window.scroll({
+            top: 0,
+            left:0,
+            behavior: "smooth",
+        
+        })
     }
 }
+scrollUp();    
