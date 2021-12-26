@@ -40,15 +40,11 @@ function checkClass() {
     for (const section of sections){
         // declare the variable
         const activeLink =document.querySelector(`[href="#${section.id}"]`)
-        // check if section is active
-        if (section.classList.contains("your-active-class")){
-            //if true remove 
-            section.classList.remove("your-active-class")
-        }
-        // check if link is active
-        else if (activeLink.classList.contains("your-active-class")) {
-            // if true remove
-            activeLink.classList.remove("your-active-class")
+        // check if section is active and link is active
+        if (section.classList.contains("your-active-class") && activeLink.classList.contains("your-active-class")){
+            //if true remove class from both
+            section.classList.remove("your-active-class");
+            activeLink.classList.remove("your-active-class");
         }
         else {
             // continue to the next
