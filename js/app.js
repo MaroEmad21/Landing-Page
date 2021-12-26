@@ -106,7 +106,7 @@ function activeView(){
             // declare the corresponding anchor
             const corrLink =document.querySelector(`[href="#${section.id}"]`)
             // make the condtion
-            if (section.getBoundingClientRect().top >= 0 && section.getBoundingClientRect().top < 350 ) {
+            if (section.getBoundingClientRect().top >= -10 && section.getBoundingClientRect().top < 300 ) {
                 // check if it had class
                 checkClass();
                 // add the class to sction
@@ -128,7 +128,7 @@ window.addEventListener("load",navbarFormation());
 // make the main Function
 function scrollUp(){
     // declare the variable
-    var myButton = document.getElementById('goup');
+    let myButton = document.getElementById('goup');
     // start the function on scroling
     window.onscroll = function () {
         // make the condition
