@@ -88,7 +88,7 @@ function navbarFormation(){
             e.preventDefault();
             section.scrollIntoView({
                 behavior: "smooth",
-                block: "start"
+                block: "center"
             })
         })
 }
@@ -104,15 +104,15 @@ function activeView(){
         // make the for each loop to check each section
         sections.forEach( (section)=>{
             // declare the corresponding anchor
-            const corrLink =document.querySelector(`[href="#${section.id}"]`)
+            const corrLink =document.querySelector(`[href="#${section.id}"]`);
             // make the condtion
             if (section.getBoundingClientRect().top >= -10 && section.getBoundingClientRect().top < 300 ) {
                 // check if it had class
                 checkClass();
                 // add the class to sction
-                section.classList.add("your-active-class")
+                section.classList.add("your-active-class");
                 //add the class to the corresponding anchor
-                corrLink.classList.add("your-active-class")
+                corrLink.classList.add("your-active-class");
                 
             }})})
 }
